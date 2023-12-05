@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Guess the Number
+        </title>
+    </head>
+    <body>
+        <h2>Guess the Number</h2>
+        <input type="number" id="in"/>
+        <button onclick="check()">Check</button><br>
+        <p id="res">Guess !!!</p>
+        <p id="score">Your Score :<span id="s">10</span></p>
+
+        <script>
+            function check(){
+                var input = document.getElementById("in").value
+                var ans = Math.floor(Math.random()*10)+1
+                if(Number(input) == ans){
+                    document.getElementById("res").innerHTML = "You are right!!!"
+                    alert("YOU WON !!!")
+                }
+                else{
+                    var sc = document.getElementById("s").textContent
+                    if(Number(sc)>0){
+                        document.getElementById("s").innerHTML = Number(sc)-1
+                    }
+                    document.getElementById("res").innerHTML = " You are wrong!!!"
+                }
+            }
+        </script>
+    </body>
+</html>
